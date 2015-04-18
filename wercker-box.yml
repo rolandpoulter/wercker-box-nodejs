@@ -6,7 +6,10 @@ platform: ubuntu@12.04
 description: "node.js (~0.12), phantomjs, gulp, karma, browserify"
 packages:
   - nodejs@0.12
-  - phantomjs@1.9.2
+  - phantomjs
+  - gulp
+  - karma
+  - browserify
 keywords:
   - nodejs
   - grunt
