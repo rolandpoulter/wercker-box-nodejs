@@ -17,4 +17,4 @@ keywords:
   - phantomjs
   - karma
 script: |
-  sudo npm install -g phantomjs, gulp, karma, browserify
+  npm install -g phantomjs, gulp, karma, browserify
