@@ -12,7 +12,7 @@ packages:
   - browserify
 keywords:
   - nodejs
-  - grunt
+  - gulp
   - browserify
   - phantomjs
   - karma
