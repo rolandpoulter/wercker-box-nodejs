@@ -17,4 +17,13 @@ keywords:
   - phantomjs
   - karma
 script: |
-  npm install -g phantomjs, gulp, karma, browserify
+npm install -g gulp
+  sudo npm install -g karma
+  sudo npm install -g browserify
+  
+  export PHANTOM_VERSION=1.9.2
+  wget https://phantomjs.googlecode.com/files/phantomjs-$PHANTOM_VERSION-linux-x86_64.tar.bz2
+  tar xfj phantomjs-$PHANTOM_VERSION-linux-x86_64.tar.bz2
+  sudo cp phantomjs-$PHANTOM_VERSION-linux-x86_64/bin/phantomjs /usr/local/bin
+  
+  sudo npm install -g phantomjs
