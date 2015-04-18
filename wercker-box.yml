@@ -1,6 +1,6 @@
 name: nodejs
-version: 0.0.4
-inherits: wercker/ubuntu12.04-nodejs0.12@1.2.0
+version: 0.0.0
+inherits: nahody/nodejs@0.2.1
 type: main
 platform: ubuntu@12.04
 description: "node.js (~0.12), phantomjs, gulp, karma, browserify"
@@ -18,26 +18,3 @@ keywords:
   - karma
 script: |
   sudo npm install -g phantomjs, gulp, karma, browserify
-
-box-detect:
-  priority : 1000
-  version :
-  detect:
-    - files:
-      - package.json
-
-default-build:
-  nodejs:
-    priority : 50
-    detect:
-      - default: true
-    text-to-append: |
-      build:
-        steps:
-          - script:
-                name: echo nodejs information
-                code: |
-                  echo "node version $(node -v) running"
-                  echo "npm version $(npm -v) running"
-          - npm-install
-          - npm-test
