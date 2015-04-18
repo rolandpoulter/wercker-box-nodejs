@@ -17,7 +17,7 @@ keywords:
   - phantomjs
   - karma
 script: |
-export PHANTOM_VERSION=1.9.2
+  export PHANTOM_VERSION=1.9.2
   wget https://phantomjs.googlecode.com/files/phantomjs-$PHANTOM_VERSION-linux-x86_64.tar.bz2
   tar xfj phantomjs-$PHANTOM_VERSION-linux-x86_64.tar.bz2
   sudo cp phantomjs-$PHANTOM_VERSION-linux-x86_64/bin/phantomjs /usr/local/bin
