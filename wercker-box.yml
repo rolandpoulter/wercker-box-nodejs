@@ -13,12 +13,16 @@ keywords:
   - browserify
   - phantomjs
   - karma
+script: |
+  sudo npm install -g phantomjs, gulp, karma, browserify
+
 box-detect:
   priority : 1000
   version :
   detect:
     - files:
       - package.json
+
 default-build:
   nodejs:
     priority : 50
@@ -34,5 +38,3 @@ default-build:
                   echo "npm version $(npm -v) running"
           - npm-install
           - npm-test
-script: |
-  sudo npm install -g phantomjs, gulp, karma, browserify
