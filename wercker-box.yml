@@ -17,25 +17,29 @@ keywords:
   - phantomjs
   - karma
 script: |
-  sudo apt-get install git
-  sudo apt-get install build-essential
-  sudo apt-get install g++
-  sudo apt-get install flex
-  sudo apt-get install bison
-  sudo apt-get install gperf
-  sudo apt-get install ruby
-  sudo apt-get install perl
-  sudo apt-get install libsqlite3-dev
-  sudo apt-get install libfontconfig1-dev
-  sudo apt-get install libicu-dev
-  sudo apt-get install libfreetype6
-  sudo apt-get install libssl-dev
-  sudo apt-get install libpng-dev
-  sudo apt-get install libjpeg-dev
-  git clone git://github.com/ariya/phantomjs.git
-  cd phantomjs
-  git checkout 2.0
-  ./build.sh
+  export PHANTOM_VERSION=1.9.2
+  wget https://phantomjs.googlecode.com/files/phantomjs-$PHANTOM_VERSION-linux-x86_64.tar.bz2
+  tar xfj phantomjs-$PHANTOM_VERSION-linux-x86_64.tar.bz2
+  sudo cp phantomjs-$PHANTOM_VERSION-linux-x86_64/bin/phantomjs /usr/local/bin
+  # sudo apt-get install git
+  # sudo apt-get install build-essential
+  # sudo apt-get install g++
+  # sudo apt-get install flex
+  # sudo apt-get install bison
+  # sudo apt-get install gperf
+  # sudo apt-get install ruby
+  # sudo apt-get install perl
+  # sudo apt-get install libsqlite3-dev
+  # sudo apt-get install libfontconfig1-dev
+  # sudo apt-get install libicu-dev
+  # sudo apt-get install libfreetype6
+  # sudo apt-get install libssl-dev
+  # sudo apt-get install libpng-dev
+  # sudo apt-get install libjpeg-dev
+  # git clone git://github.com/ariya/phantomjs.git
+  # cd phantomjs
+  # git checkout 2.0
+  # ./build.sh
   sudo npm install -g phantomjs
   sudo npm install -g gulp
   sudo npm install -g karma
