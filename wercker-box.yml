@@ -1,0 +1,48 @@
+name: nodejs-phantomjs-gulp-karma
+version: 0.0.4
+inherits: wercker/ubuntu12.04-nodejs0.12@1.2.0
+type: main
+platform: ubuntu@12.04
+description: "node.js (~0.12), phantomjs, gulp, karma, browserify"
+packages:
+  - nodejs@0.12
+  - phantomjs@1.9.2
+keywords:
+  - nodejs
+  - grunt
+  - browserify
+  - phantomjs
+  - karma
+box-detect:
+  priority : 1000
+  version :
+  detect:
+    - files:
+      - package.json
+default-build:
+  nodejs:
+    priority : 50
+    detect:
+      - default: true
+    text-to-append: |
+      build:
+        steps:
+          - script:
+                name: echo nodejs information
+                code: |
+                  echo "node version $(node -v) running"
+                  echo "npm version $(npm -v) running"
+          - npm-install
+          - npm-test
+script: |
+  # remove the default installed optipng as it is too old
+  sudo apt-get remove optipng 
+  sudo apt-get update
+
+  # node.js
+  sudo npm cache clean -f
+  sudo npm install -g n
+  sudo n stable
+  node -v
+
+  sudo npm install -g phantomjs, gulp, karma, browserify
