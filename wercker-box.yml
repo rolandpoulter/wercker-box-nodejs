@@ -1,5 +1,5 @@
 name: nodejs
-version: 0.0.0
+version: 0.1.0
 inherits: nahody/nodejs@0.2.1
 type: main
 platform: ubuntu@12.04
@@ -17,10 +17,13 @@ keywords:
   - phantomjs
   - karma
 script: |
-  export PHANTOM_VERSION=1.9.2
-  wget https://phantomjs.googlecode.com/files/phantomjs-$PHANTOM_VERSION-linux-x86_64.tar.bz2
-  tar xfj phantomjs-$PHANTOM_VERSION-linux-x86_64.tar.bz2
-  sudo cp phantomjs-$PHANTOM_VERSION-linux-x86_64/bin/phantomjs /usr/local/bin
+  sudo apt-get install git build-essential g++ flex bison gperf ruby perl \
+  libsqlite3-dev libfontconfig1-dev libicu-dev libfreetype6 libssl-dev \
+  libpng-dev libjpeg-dev
+  git clone git://github.com/ariya/phantomjs.git
+  cd phantomjs
+  git checkout 2.0
+  ./build.sh
   sudo npm install -g phantomjs
   sudo npm install -g gulp
   sudo npm install -g karma
